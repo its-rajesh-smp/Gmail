@@ -1,0 +1,47 @@
+.Login-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: poppins;
+  background-color: #f1f3f6;
+}
+.Login-div .Login-div__container {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  width: 20%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0.5px 0.5px 1px black;
+}
+.Login-div .Login-div__container h1 {
+  font-size: 30px;
+}
+.Login-div .Login-div__container h3 {
+  font-size: 20px;
+}
+.Login-div .Login-div__container p {
+  font-size: 12px;
+}
+.Login-div .Login-div__container div {
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.Login-div .Login-div__container div input {
+  padding-left: 30px;
+}
+.Login-div .Login-div__container button {
+  margin: 10px 0px;
+  padding: 10px 0px;
+  background-color: #2874f0;
+  border: none;
+  font-family: poppins;
+  font-size: 16px;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+}/*# sourceMappingURL=Login.css.map */
