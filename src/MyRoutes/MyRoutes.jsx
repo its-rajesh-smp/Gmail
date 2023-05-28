@@ -2,6 +2,7 @@ import React from "react";
 import Login from "../Pages/Login/Login";
 import { useSelector } from "react-redux";
 import { Route, Routes } from "react-router-dom";
+import ComposeMail from "../Pages/Compose Mail/ComposeMail";
 
 const MyRoutes = () => {
   const isAuth = useSelector((state) => state.authSlice.isAuth);
@@ -9,7 +10,7 @@ const MyRoutes = () => {
     <Routes>
       {isAuth ? (
         <>
-          <Route path="/" />
+          <Route path="/" element={<ComposeMail />} />
         </>
       ) : (
         <>

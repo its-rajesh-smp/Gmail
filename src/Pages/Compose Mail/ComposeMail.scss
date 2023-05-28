@@ -1,0 +1,55 @@
+@import "../../Styles/color";
+.ComposeMail-div {
+  width: calc(100% - 100px);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .mailTo__div,
+  .mailSubject__div {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+    border-bottom: 1px solid #000;
+    input {
+      border: none;
+      background-color: transparent;
+      padding: 10px;
+      outline: none;
+    }
+    i {
+      font-size: 30px;
+    }
+  }
+}
+.textArea__div {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+  border-bottom: 1px solid #000;
+}
+.bx-paperclip {
+  align-self: flex-start;
+  font-size: 30px;
+}
+.emailPaper {
+  min-height: 70px;
+  width: 100%;
+  outline: none;
+}
+.sendMailBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: $myBlue;
+  color: white;
+  border: none;
+  border-radius: 2px;
+
+  font-weight: 600;
+  font-family: poppins;
+  width: fit-content;
+  padding: 10px 30px;
+}
