@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
-import Login from "../Pages/Login/Login";
+
+import Layout from "../Layout/Layout";
+import MyRoutes from "../MyRoutes/MyRoutes";
+import { useDispatch } from "react-redux";
+import { fetchUser } from "../Store/Actions/authActions";
 
 function App(props) {
+  const dispatch = useDispatch();
+  // FETCH USER
+  useEffect(() => {
+    dispatch(fetchUser());
+  }, []);
+
   return (
     <div className=" App-div ">
-      <Login />
+      <Layout />
+      <MyRoutes />
     </div>
   );
 }

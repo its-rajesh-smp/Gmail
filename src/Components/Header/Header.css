@@ -1,0 +1,21 @@
+.Header-div {
+  background-color: #30a2ff;
+  width: 10px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  gap: 20px;
+}
+.Header-div .logo {
+  font-size: 40px;
+}
+.Header-div .navItems {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 25px;
+}/*# sourceMappingURL=Header.css.map */

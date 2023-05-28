@@ -1,0 +1,24 @@
+.SearchBar-div {
+  position: fixed;
+  left: 50px;
+  top: 0;
+  background-color: #30a2ff;
+  width: calc(100vw - 50px);
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.SearchBar-div input {
+  padding: 10px;
+  width: 50%;
+  border: none;
+  background-color: white;
+  outline: none;
+}
+.SearchBar-div i {
+  padding: 10px;
+  color: #30a2ff;
+  background-color: white;
+  box-sizing: border-box;
+}/*# sourceMappingURL=SearchBar.css.map */
