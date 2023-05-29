@@ -1,0 +1,19 @@
+.Email-div {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0px;
+  border-top: 1px solid gainsboro;
+  border-bottom: 1px solid gainsboro;
+  grid-template-columns: 0.1fr 0.2fr 0.2fr 1.5fr 6fr;
+  font-family: poppins;
+  .status {
+    width: 8px;
+    height: 8px;
+    background-color: red;
+    border-radius: 50%;
+  }
+  .emailId {
+    font-weight: 700;
+  }
+}

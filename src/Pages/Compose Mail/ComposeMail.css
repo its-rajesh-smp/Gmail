@@ -1,27 +1,29 @@
 .ComposeMail-div {
-  width: calc(100% - 100px);
   padding: 20px;
+}
+.ComposeMail-div .ComposeMail-div__container {
+  width: calc(100% - 100px);
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.ComposeMail-div .mailTo__div,
-.ComposeMail-div .mailSubject__div {
+.ComposeMail-div .ComposeMail-div__container .mailTo__div,
+.ComposeMail-div .ComposeMail-div__container .mailSubject__div {
   display: flex;
   align-items: center;
   padding: 5px;
   gap: 5px;
   border-bottom: 1px solid #000;
 }
-.ComposeMail-div .mailTo__div input,
-.ComposeMail-div .mailSubject__div input {
+.ComposeMail-div .ComposeMail-div__container .mailTo__div input,
+.ComposeMail-div .ComposeMail-div__container .mailSubject__div input {
   border: none;
   background-color: transparent;
   padding: 10px;
   outline: none;
 }
-.ComposeMail-div .mailTo__div i,
-.ComposeMail-div .mailSubject__div i {
+.ComposeMail-div .ComposeMail-div__container .mailTo__div i,
+.ComposeMail-div .ComposeMail-div__container .mailSubject__div i {
   font-size: 30px;
 }
 

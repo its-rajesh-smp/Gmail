@@ -1,3 +1,21 @@
+@import "../Styles/color";
+body {
+  background-color: $myGrey;
+}
 .removeHeader {
-  margin: 50px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+.container {
+  padding: 20px;
+  background-color: white;
+  margin: 20px;
+  border-radius: 10px;
+}
+a {
+  color: unset;
+  text-decoration: none;
+}
+.active {
+  color: gold;
 }
