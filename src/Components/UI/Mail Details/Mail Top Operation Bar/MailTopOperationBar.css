@@ -1,0 +1,10 @@
+.MailTopOperationBar-div {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+.MailTopOperationBar-div div {
+  display: flex;
+  gap: 20px;
+}/*# sourceMappingURL=MailTopOperationBar.css.map */

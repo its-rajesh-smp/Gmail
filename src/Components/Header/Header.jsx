@@ -22,6 +22,8 @@ function Header(props) {
         <i className="bx bx-star"></i>
 
         <i className="bx bx-user-circle"></i>
+
+        <i className="bx bx-log-out"></i>
       </div>
 
       <SearchBar />

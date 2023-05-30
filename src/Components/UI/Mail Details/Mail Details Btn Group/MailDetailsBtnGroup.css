@@ -1,0 +1,13 @@
+.MailDetailsBtnGroup-div button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: gainsboro;
+  border: none;
+  font-family: roboto;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 5px;
+  justify-content: space-evenly;
+  padding: 8px 30px;
+}/*# sourceMappingURL=MailDetailsBtnGroup.css.map */

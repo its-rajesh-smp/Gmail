@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import ComposeMail from "../Pages/Compose Mail/ComposeMail";
 import Inbox from "../Pages/Inbox/Inbox";
 import SendBox from "../Pages/SendBox/SendBox";
+import MailDetails from "../Pages/MailDetails/MailDetails";
 
 const MyRoutes = () => {
   const isAuth = useSelector((state) => state.authSlice.isAuth);
@@ -12,7 +13,7 @@ const MyRoutes = () => {
     <Routes>
       {isAuth ? (
         <>
-          <Route path="/" element={<Inbox />} />
+          <Route path="/" element={<MailDetails />} />
           <Route path="/compose" element={<ComposeMail />} />
           <Route path="/sended" element={<SendBox />} />
         </>

@@ -1,0 +1,17 @@
+.WhichUser-div {
+  font-family: poppins;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.WhichUser-div img {
+  width: 50px;
+}
+.WhichUser-div p:first-child {
+  font-weight: 700;
+  font-size: 13px;
+}
+.WhichUser-div p:last-child {
+  color: gray;
+  font-size: 11px;
+}/*# sourceMappingURL=WhichUser.css.map */
