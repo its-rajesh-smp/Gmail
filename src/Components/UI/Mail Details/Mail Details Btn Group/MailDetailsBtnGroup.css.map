@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["MailDetailsBtnGroup.scss"],"names":[],"mappings":"AACE;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA","file":"MailDetailsBtnGroup.css"}
+{"version":3,"sourceRoot":"","sources":["MailDetailsBtnGroup.scss","../../../../Styles/_color.scss"],"names":[],"mappings":"AAEE;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA,OChBK;;ADkBL;EACE","file":"MailDetailsBtnGroup.css"}

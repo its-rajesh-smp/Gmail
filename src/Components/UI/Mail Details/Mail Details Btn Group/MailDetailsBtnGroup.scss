@@ -1,9 +1,10 @@
+@import "../../../../Styles/color";
 .MailDetailsBtnGroup-div {
   button {
     display: flex;
     align-items: center;
     gap: 5px;
-    background-color: gainsboro;
+    background-color: rgb(237, 237, 237);
     border: none;
     font-family: roboto;
     font-weight: 600;
@@ -11,5 +12,12 @@
     border-radius: 5px;
     justify-content: space-evenly;
     padding: 8px 30px;
+    transition-property: all;
+    transition-duration: 200ms;
+    color: $myBlue;
+
+    &:hover {
+      background-color: gainsboro;
+    }
   }
 }
