@@ -2,8 +2,17 @@ import React from "react";
 import "./Header.css";
 import SearchBar from "../UI/Search Bar/SearchBar";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logoutUser } from "../../Store/Reducers/authReducer";
 
 function Header(props) {
+  const dispatch = useDispatch();
+
+  // On Click Logout
+  const onClickLogout = () => {
+    dispatch(logoutUser());
+  };
+
   return (
     <header className=" Header-div ">
       <NavLink to={"/"}>
@@ -23,7 +32,7 @@ function Header(props) {
 
         <i className="bx bx-user-circle"></i>
 
-        <i className="bx bx-log-out"></i>
+        <i onClick={onClickLogout} className="bx bx-log-out"></i>
       </div>
 
       <SearchBar />

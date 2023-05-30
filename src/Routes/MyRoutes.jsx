@@ -13,7 +13,8 @@ const MyRoutes = () => {
     <Routes>
       {isAuth ? (
         <>
-          <Route path="/" element={<MailDetails />} />
+          <Route path="/" element={<Inbox />} />
+          <Route path="/mail" element={<MailDetails />} />
           <Route path="/compose" element={<ComposeMail />} />
           <Route path="/sended" element={<SendBox />} />
         </>

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 
 import Layout from "../Layout/Layout";
-import MyRoutes from "../MyRoutes/MyRoutes";
+import MyRoutes from "../Routes/MyRoutes";
 import { useDispatch } from "react-redux";
 import { fetchUser } from "../Store/Actions/authActions";
 

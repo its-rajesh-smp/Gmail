@@ -12,9 +12,15 @@ const authReducer = createSlice({
             state.idToken = action.payload.idToken,
                 state.isAuth = true,
                 state.userData.email = action.payload.email
+        },
+        logoutUser: (state) => {
+            localStorage.clear("gmail")
+            state.idToken = "",
+                state.isAuth = false,
+                state.userData = { email: "" }
         }
     }
 })
 
-export const { authUser } = authReducer.actions
+export const { authUser, logoutUser } = authReducer.actions
 export default authReducer
