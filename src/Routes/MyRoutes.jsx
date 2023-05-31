@@ -14,7 +14,7 @@ const MyRoutes = () => {
       {isAuth ? (
         <>
           <Route path="/" element={<Inbox />} />
-          <Route path="/mail" element={<MailDetails />} />
+          <Route path="/mail/:mailData" element={<MailDetails />} />
           <Route path="/compose" element={<ComposeMail />} />
           <Route path="/sended" element={<SendBox />} />
         </>

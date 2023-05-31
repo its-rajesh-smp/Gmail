@@ -1,8 +1,6 @@
 import axios from "axios"
 import { GET_USER, SIGNIN_USER, SIGNUP_USER, USERS } from "../../Firebase/API_URL"
 import { authUser } from "../Reducers/authReducer"
-import { fetchRecivedMails } from "../Reducers/recivedMailReducer"
-import { fetchSendedMails } from "../Reducers/sendedMailReducer"
 
 
 export const sighUpUser = (enteredInput) => {
@@ -39,23 +37,22 @@ export const fetchUser = () => {
             const localIdToken = localStorage.getItem("gmail")
             if (!localIdToken) { return }
             const { data: authData } = await axios.post(GET_USER, { idToken: localIdToken })
-            const myEmail = authData.users[0].email.replace(".", "").replace("@", "")
-            const { data: userData } = await axios.get(`${USERS}/${myEmail}.json`)
+            // const myEmail = authData.users[0].email.replace(".", "").replace("@", "")
+            // const { data: userData } = await axios.get(`${USERS}/${myEmail}.json`)
 
-            // FORMING RECIVED ARRAY
-            const recivedMailArr = userData && userData.mails && userData.mails.recived ? Object.keys(userData.mails.recived).map((recivedId) => {
-                return { ...userData.mails.recived[recivedId], id: recivedId }
-            }) : []
+            // // FORMING RECIVED ARRAY
+            // const recivedMailArr = userData && userData.mails && userData.mails.recived ? Object.keys(userData.mails.recived).map((recivedId) => {
+            //     return { ...userData.mails.recived[recivedId], id: recivedId }
+            // }) : []
 
-            // FORMING SENDED ARRAY
-            const sendedMailArr = userData && userData.mails && userData.mails.sended ? Object.keys(userData.mails.sended).map((sendedId) => {
-                return { ...userData.mails.sended[sendedId], id: sendedId }
-            }) : []
-            console.log(sendedMailArr);
+            // // FORMING SENDED ARRAY
+            // const sendedMailArr = userData && userData.mails && userData.mails.sended ? Object.keys(userData.mails.sended).map((sendedId) => {
+            //     return { ...userData.mails.sended[sendedId], id: sendedId }
+            // }) : []
+
             // Dispatching
             dispatch(authUser({ ...authData.users[0], idToken: localIdToken }))
-            dispatch(fetchRecivedMails(recivedMailArr))
-            dispatch(fetchSendedMails(sendedMailArr))
+
         } catch (error) {
             console.log(error);
         }

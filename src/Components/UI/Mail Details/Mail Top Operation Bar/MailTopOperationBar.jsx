@@ -5,12 +5,12 @@ function MailTopOperationBar(props) {
   return (
     <div className=" MailTopOperationBar-div container">
       <div className="MailTopOperationBar-div__left">
-        <i class="bx bx-x"></i>
-        <i class="bx bx-share-alt"></i>
-        <i class="bx bx-envelope"></i>
+        <i className="bx bx-x"></i>
+        <i className="bx bx-share-alt"></i>
+        <i className="bx bx-envelope"></i>
       </div>
       <div className="MailTopOperationBar-div__right">
-        <i class="bx bx-printer"></i>
+        <i className="bx bx-printer"></i>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React from "react";
 import "./WhichUser.css";
 
 function WhichUser(props) {
+  console.log(props.data);
   return (
     <div className=" WhichUser-div container">
       <img
@@ -9,7 +10,7 @@ function WhichUser(props) {
         alt=""
       />
       <div>
-        <p>firebase-noreply@google.com</p>
+        <p>{props.data.from}</p>
         <p>to me</p>
       </div>
     </div>

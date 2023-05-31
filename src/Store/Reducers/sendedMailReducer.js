@@ -5,8 +5,9 @@ const sendedMailReducer = createSlice({
     initialState: { sended: [] },
     reducers: {
         fetchSendedMails: (state, action) => {
-            state.recived = action.payload
-        }
+            state.sended = action.payload
+        },
+
     }
 })
 

@@ -11,7 +11,7 @@
 .Email-div .status {
   width: 8px;
   height: 8px;
-  background-color: red;
+  background-color: white;
   border-radius: 50%;
 }
 .Email-div .emailId {
