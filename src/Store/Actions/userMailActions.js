@@ -3,6 +3,7 @@ import { USERS } from "../../Firebase/API_URL"
 import { fetchSendedMails } from "../Reducers/sendedMailReducer"
 import { fetchRecivedMails } from "../Reducers/recivedMailReducer"
 import { fetchTotalMail } from "../Reducers/totalMailReducer"
+import { unselectAll } from "../Reducers/selectedMailReducer"
 
 export const sendMailToUser = (friendsEmail, subject, enteredData) => {
     return async (dispatch, getState) => {
@@ -71,5 +72,28 @@ export const fetchRecivedMailsAct = () => {
         } catch (error) {
             console.log(error);
         }
+    }
+}
+
+
+
+export const deleteMailAct = (path) => {
+    return async (dispatch, getState) => {
+        const myEmail = getState().authSlice.userData.email.replace(".", "").replace("@", "")
+        const selectedObj = JSON.parse(JSON.stringify(getState().selectedMailSlice.selectedMailObj))
+        for (let i in selectedObj) {
+            await axios.delete(`${USERS}/${myEmail}/mails/${path === "SENDED" ? "sended" : "recived"}/${i}.json`)
+        }
+        if (path === "SENDED") {
+            const sendedMails = getState().sendedMailSlice.sended
+            const updatedAfterDeleted = sendedMails.filter((mail) => !selectedObj[mail.id])
+            dispatch(fetchSendedMails(updatedAfterDeleted))
+        }
+        else {
+            const recivedMails = getState().recivedMailSlice.recived
+            const updatedAfterDeleted = recivedMails.filter((mail) => !selectedObj[mail.id])
+            dispatch(fetchRecivedMails(updatedAfterDeleted))
+        }
+        dispatch(unselectAll())
     }
 }
