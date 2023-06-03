@@ -10,8 +10,11 @@ function Inbox(props) {
   const dispatch = useDispatch();
   // Fetch Inbox Mails
   useEffect(() => {
-    dispatch(fetchRecivedMailsAct());
+    const timeOut = setInterval(() => {
+      dispatch(fetchRecivedMailsAct());
+    }, 2000);
     return () => {
+      clearTimeout(timeOut);
       dispatch(unselectAll());
     };
   }, []);

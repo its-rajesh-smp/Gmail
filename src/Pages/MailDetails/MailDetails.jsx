@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./MailDetails.css";
 import MailTopOperationBar from "../../Components/UI/Mail Details/Mail Top Operation Bar/MailTopOperationBar";
 import WhichUser from "../../Components/UI/Mail Details/Which User/WhichUser";
@@ -11,20 +11,27 @@ import { sendReadStatusAct } from "../../Store/Actions/recivedMailActions";
 
 function MailDetails(props) {
   const param = useParams();
-  const data = JSON.parse(param.mailData);
+  const mailId = param.mailData;
   const dispatch = useDispatch();
+  const [mailData, setMailData] = useState();
 
   useEffect(() => {
-    dispatch(sendReadStatusAct(data.id));
+    dispatch(sendReadStatusAct(mailId)).then((mailData) => {
+      setMailData(mailData);
+    });
   }, []);
+
+  if (!mailData) {
+    return;
+  }
 
   return (
     <div className=" MailDetails-div removeHeader ">
-      <MailTopOperationBar data={data} />
-      <WhichUser data={data} />
-      <MailSubject data={data} />
-      <MailDescContainer data={data} />
-      <MailDetailsBtnGroup data={data} />
+      <MailTopOperationBar data={mailData} />
+      <WhichUser data={mailData} />
+      <MailSubject data={mailData} />
+      <MailDescContainer data={mailData} />
+      <MailDetailsBtnGroup data={mailData} />
     </div>
   );
 }

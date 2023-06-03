@@ -10,7 +10,7 @@ function Email(props) {
 
   // On Click Navigate To MailDetails
   const onClickNavigate = () => {
-    navigate(`/mail/${JSON.stringify(props.data)}`);
+    navigate(`/mail/${props.data.id}`);
   };
 
   // On Click Checkbox Select Mail

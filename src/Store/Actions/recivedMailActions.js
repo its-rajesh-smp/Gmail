@@ -10,13 +10,16 @@ export const sendReadStatusAct = (mailId) => {
         try {
             const { data } = await axios.delete(`${USERS}/${myEmail}/mails/recived/${mailId}/showDot.json`)
 
+            let returndData = {}
             const updatedRecivedMails = recivedMails.map((mail) => {
                 if (mail.id === mailId) {
+                    returndData = mail
                     delete mail.showDot
                 }
                 return mail
             })
             dispatch(fetchRecivedMails(updatedRecivedMails))
+            return returndData
 
         } catch (error) {
             console.log(error);

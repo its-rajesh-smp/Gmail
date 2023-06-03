@@ -2,7 +2,6 @@ import React from "react";
 import "./WhichUser.css";
 
 function WhichUser(props) {
-  console.log(props.data);
   return (
     <div className=" WhichUser-div container">
       <img
