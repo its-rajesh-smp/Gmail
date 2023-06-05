@@ -9,6 +9,7 @@ import { unselectAll } from "../../Store/Reducers/selectedMailReducer";
 function SendBox(props) {
   const sendedMails = useSelector((state) => state.sendedMailSlice.sended);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchSendboxMailsAct());
     return () => {
@@ -19,7 +20,7 @@ function SendBox(props) {
   return (
     <div className=" SendBox-div removeHeader">
       <TopBar path="SENDED" />
-      <EmailContainer for={"send"} mailArr={sendedMails} />
+      <EmailContainer for={"sended"} mailArr={sendedMails} />
     </div>
   );
 }

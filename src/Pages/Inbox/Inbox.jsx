@@ -8,11 +8,16 @@ import { unselectAll } from "../../Store/Reducers/selectedMailReducer";
 
 function Inbox(props) {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchRecivedMailsAct());
+  }, []);
+
   // Fetch Inbox Mails
   useEffect(() => {
     const timeOut = setInterval(() => {
       dispatch(fetchRecivedMailsAct());
-    }, 2000);
+    }, 10000);
     return () => {
       clearTimeout(timeOut);
       dispatch(unselectAll());

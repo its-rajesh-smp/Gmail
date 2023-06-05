@@ -81,6 +81,7 @@ export const deleteMailAct = (path) => {
     return async (dispatch, getState) => {
         const myEmail = getState().authSlice.userData.email.replace(".", "").replace("@", "")
         const selectedObj = JSON.parse(JSON.stringify(getState().selectedMailSlice.selectedMailObj))
+
         for (let i in selectedObj) {
             await axios.delete(`${USERS}/${myEmail}/mails/${path === "SENDED" ? "sended" : "recived"}/${i}.json`)
         }
@@ -90,9 +91,24 @@ export const deleteMailAct = (path) => {
             dispatch(fetchSendedMails(updatedAfterDeleted))
         }
         else {
+            const totalMails = { read: 0, unread: 0 }
+
             const recivedMails = getState().recivedMailSlice.recived
-            const updatedAfterDeleted = recivedMails.filter((mail) => !selectedObj[mail.id])
+            const updatedAfterDeleted = recivedMails.filter((mail) => {
+                if (!selectedObj[mail.id]) {
+
+                    if (mail.showDot) {
+                        totalMails.unread++
+                    }
+                    else {
+                        totalMails.read++
+                    }
+                }
+                return !selectedObj[mail.id]
+            })
+            console.log(totalMails);
             dispatch(fetchRecivedMails(updatedAfterDeleted))
+            dispatch(fetchTotalMail(totalMails))
         }
         dispatch(unselectAll())
     }

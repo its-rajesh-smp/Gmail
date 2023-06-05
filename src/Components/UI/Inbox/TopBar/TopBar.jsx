@@ -6,6 +6,7 @@ import { deleteMailAct } from "../../../../Store/Actions/userMailActions";
 function TopBar(props) {
   const totalMails = useSelector((state) => state.totalMailSlice);
   const dispatch = useDispatch();
+
   // On Click Delete Mail btn
   const onDeleteBtnclick = () => {
     dispatch(deleteMailAct(props.path));
@@ -19,12 +20,14 @@ function TopBar(props) {
         <i className="bx bx-dots-vertical-rounded"></i>
         <i onClick={onDeleteBtnclick} className="bx bx-message-square-x"></i>
       </div>
-      <div className="TopBar-div__right">
-        <p>
-          <span>{totalMails.read}</span> Read <span>{totalMails.unread}</span>{" "}
-          Unread
-        </p>
-      </div>
+      {props.path !== "SENDED" && (
+        <div className="TopBar-div__right">
+          <p>
+            <span>{totalMails.read}</span> Read <span>{totalMails.unread}</span>{" "}
+            Unread
+          </p>
+        </div>
+      )}
     </div>
   );
 }

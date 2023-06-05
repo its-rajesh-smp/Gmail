@@ -8,6 +8,7 @@ import { fetchUser } from "../Store/Actions/authActions";
 
 function App(props) {
   const dispatch = useDispatch();
+
   // FETCH USER
   useEffect(() => {
     dispatch(fetchUser());
